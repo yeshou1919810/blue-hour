@@ -1,0 +1,12 @@
+{
+  "name": "blue-hour-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "蓝调补给站：运动健康 AI 社区交互原型",
+  "scripts": {
+    "dev": "node server.mjs",
+    "check": "node --check dist/app.js && node --check dist/data.js && node --check dist/mock-agent.js && node --check server.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
