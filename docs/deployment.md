@@ -2,6 +2,8 @@
 
 目标仓库：`yeshou1919810/blue-hour`。
 
+在线访问：[蓝调补给站](https://yeshou1919810.github.io/blue-hour/)。无需启动本机服务。
+
 网页内容位于 `dist/`，无需安装依赖或构建。`.github/workflows/pages.yml` 会在推送到 `main` 后检查 JavaScript 语法，再上传并部署 `dist/`。也可以在 GitHub 的 Actions 页面手动运行工作流。
 
 首次配置：仓库 Settings → Pages → Build and deployment → Source 选择 **GitHub Actions**。工作流成功完成后，部署任务中的链接即为实际访问地址。
