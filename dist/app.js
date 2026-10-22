@@ -234,6 +234,7 @@ function render() {
   bindFollowup();
   setNavigation(false, false);
   document.title = state.route === 'post' ? `${state.posts.find(p => p.id === state.postId)?.title || '话题详情'} · 蓝调补给站` : '蓝调补给站 · 找回自己的好状态';
+  document.dispatchEvent(new CustomEvent('blue-hour:render', { detail: { route: state.route } }));
 }
 
 function cancelRun() {

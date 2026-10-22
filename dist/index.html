@@ -6,13 +6,34 @@
     <meta name="theme-color" content="#061A40" />
     <meta name="description" content="蓝调补给站，一起聊运动、聊生活，把每个健康疑问变成下一步行动。运动健康 AI 社区交互原型。" />
     <title>蓝调补给站 · 找回自己的好状态</title>
+    <!-- Critical cover is inline: no homepage flash while modules/styles are loading. -->
+    <style>
+      .intro-pending { scrollbar-gutter:auto; scrollbar-width:none; }
+      .intro-pending::-webkit-scrollbar { display:none; }
+      .intro-pending body { padding-right:var(--intro-gutter-width,0px); }
+      .intro-pending:not(.intro-running)::before { content:''; position:fixed; top:0; left:0; width:var(--intro-screen-width,100vw); height:100vh; height:100dvh; z-index:10000; background:var(--intro-water,#029EEB); pointer-events:none; }
+      .intro-skip { display:none; }
+      .intro-pending .intro-skip { display:flex; position:fixed; z-index:10002; top:20px; right:24px; min-height:44px; color:#1D384A; background:#fff; padding:10px 16px; border:1px solid #1d384a33; }
+    </style>
+    <script src="./intro-boot.js"></script>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./intro.css" />
     <script src="./app.js" type="module"></script>
+    <script src="./intro.js" type="module"></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">跳转到主要内容</a>
-    <div id="app"></div>
+    <button class="intro-skip" id="intro-skip" type="button" aria-label="跳过开场动画">跳过 <span aria-hidden="true">ESC ↗</span></button>
+    <div id="app">
+      <!-- Useful static homepage also survives disabled JavaScript or a failed app import. -->
+      <main class="fallback-home" id="main-content" tabindex="-1">
+        <h1>蓝调补给站</h1>
+        <section class="hero"><div class="hero-art" aria-hidden="true"><img src="./tide.svg" alt="" width="760" height="620"></div><div class="hero-content"><div class="hero-kicker">BLUE HOUR CLUB · 运动 · 健康 · 生活</div><h2>把状态，<br><em>练回来。</em></h2><p>聊运动，聊生活，也聊偶尔的停滞。<br>你的 AI 搭子，陪你找到自己的节奏。</p><a class="hero-explore" href="#fallback-topics">逛逛社区 ↓</a></div></section>
+        <section id="fallback-topics"><h2>找到你的同频</h2><article class="post-card"><h3>想开始跑步，但总是坚持不到第三天。有什么办法吗？</h3><p>最近想把运动重新放进生活里，想听听大家是怎么从零开始、慢慢养成习惯的。</p></article><article class="post-card"><h3>在学校食堂吃饭，怎么搭配才能省心又有满足感？</h3><p>想记录一下自己每天吃了什么，再和小麦一起找找能调整的小地方。</p></article></section>
+        <p>互动社区正在准备中；若未显示，可刷新页面重试。</p><noscript><p>浏览器未启用 JavaScript，以上为静态首页。启用后可体验发帖、筛选与评论区追问。</p></noscript>
+      </main>
+    </div>
     <div id="transition" class="transition" aria-hidden="true"><span>下一站，好状态。</span></div>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <dialog id="composer" class="composer" aria-labelledby="composer-title"></dialog>

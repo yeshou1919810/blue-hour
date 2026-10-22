@@ -6,7 +6,7 @@
   "description": "蓝调补给站：运动健康 AI 社区交互原型",
   "scripts": {
     "dev": "node server.mjs",
-    "check": "node --check dist/app.js && node --check dist/data.js && node --check dist/mock-agent.js && node --check server.mjs"
+    "check": "node --check dist/app.js && node --check dist/data.js && node --check dist/mock-agent.js && node --check dist/intro-boot.js && node --check dist/intro.js && node --check dist/hero-media.js && node --check server.mjs"
   },
   "engines": { "node": ">=20" }
 }

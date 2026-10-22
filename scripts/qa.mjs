@@ -79,6 +79,7 @@ try {
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1050, deviceScaleFactor: 1, mobile: false });
   await send('Page.navigate', { url: baseUrl });
   await until(() => evaluate(`!!document.querySelector('.post-card')`), 'homepage');
+  await until(() => evaluate(`!document.documentElement.classList.contains('intro-pending')`), 'opening finishes');
   await evaluate('localStorage.clear()');
   await send('Page.reload');
   await until(() => evaluate(`document.querySelectorAll('.post-card').length===4`), 'clean demo state');

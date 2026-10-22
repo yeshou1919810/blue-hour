@@ -4,6 +4,8 @@
 
 **[直接体验在线网页](https://yeshou1919810.github.io/blue-hour/)** · [GitHub 源码仓库](https://github.com/yeshou1919810/blue-hour)
 
+**[重播蓝色退潮开场](https://yeshou1919810.github.io/blue-hour/?intro=1)**：四层波浪、白底文案与首页依次揭幕，约 4.8 秒。可按 Esc 或点击“跳过”；普通访问每个标签页会话播放一次。配置、视频替换方式与验证命令见 [开场动画说明](docs/intro.md)。
+
 当前版本是 **v0.1 本地交互原型**，用于确定界面与产品体验。没有接入真实模型、识图、RAG、账号系统或外部工具。不要把模拟任务进度当作已经实现的 Agent 能力。
 
 已配置 GitHub Pages 自动部署：将源码推送到 `main` 后，工作流会检查代码并发布 `dist/`。部署配置与更新方法见 [部署说明](docs/deployment.md)。线上版本无需启动本机服务器。
